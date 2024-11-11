@@ -9,7 +9,7 @@
       <form action="" method="get">
           <input type="text" name="pesquisar" placeholder="Digite o nome">
           <button> Pesquisar </button>
-          <a type="button" href="" class="btn btn-success float-end">
+          <a type="button" href="{{ route('cadastrar.produto') }}" class="btn btn-success float-end">
               Incluir Produto
           </a>
       </form>
@@ -29,11 +29,18 @@
         <tbody>
           @foreach ($findProduto as $produto)
               <tr>
-                  <td> {{ $produto->nome}} </td>
-                  <td> {{ 'R$' . ' ' . number_format($produto->valor, 2, ',', '.')}} </td>
+                  <td> {{ $produto->nome }} </td>
+                  <td> {{ 'R$' . ' ' . number_format($produto->valor, 2, ',', '.') }} </td>
                   <td>
-                      <a href="" class="btn btn-light btn-sm">Editar</a>
-                      <a href=" {{ route ('produto.delete') }}" class="btn btn-danger btn-sm">Excluir</a>
+                      <a href="" class="btn btn-light btn-sm"> 
+                        Editar
+                      </a>
+
+                      <meta name="csrf-token" content=" {{ csrf_token() }}"/>
+                      <a onclick="deleteRegistroPaginacao( '{{ route('produto.delete') }} ', {{ $produto->id }} )"
+                        class="btn btn-danger btn-sm">
+                        Excluir
+                      </a>
                   </td>
               </tr>
           @endforeach

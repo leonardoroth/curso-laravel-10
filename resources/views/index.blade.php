@@ -110,16 +110,16 @@
     </main>
   </div>
 </div>
-    @yield('scripts')
+@yield('scripts')
     <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
-    <script src="/js/bootstrap.blundler.min.js"></script>
+    <script src="/js/bootstrap.blundle.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/feather-icons@4.28.0/dist/feather.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
     <script src="/js/dashboard.js"></script>
-    <script src="/docs/5.3/assets/js/color-modes.js"></script>
-
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUi.js"></script>
-
+    <script src="/js/color-modes.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.10/jquery.mask.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.blockUI/2.70/jquery.blockUI.js"></script>
+    <script src="/js/projeto.js"></script>
+    <script src="http://cdn.bootcss.com/toastr.js/latest/js/toastr.min.js"></script>
   </body>
 </html>
