@@ -18,3 +18,15 @@ Route::prefix('produtos')->group(function () {
     
     Route::delete('/delete', [ProdutosController::class, 'delete'])->name('produto.delete');
 });
+
+Route::prefix('Clientes')->group(function () {
+    Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');
+    // CADASTRO UPTADE
+    Route::get('/cadastrarClientes', [ProdutosController::class, 'cadastrarClientes'])->name('cadastrar.Clientes');
+    Route::post('/cadastrarClientes', [ProdutosController::class, 'cadastrarClientes'])->name('cadastrar.Clientes');
+    // ATUALIZAR UPTADE
+    Route::get('/atualizarClientes/{id}', [ProdutosController::class, 'atualizarClientes'])->name('atualizar.Clientes');
+    Route::put('/atualizarClientes/{id}', [ProdutosController::class, 'atualizarClientes'])->name('atualizar.Clientes');
+
+    Route::delete('/delete', [ProdutosController::class, 'delete'])->name('clientes.delete');
+});
