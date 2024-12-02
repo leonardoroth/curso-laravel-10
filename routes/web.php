@@ -20,7 +20,7 @@ Route::prefix('produtos')->group(function () {
 });
 
 Route::prefix('Clientes')->group(function () {
-    Route::get('/', [ProdutosController::class, 'index'])->name('produto.index');
+    Route::get('/', [ProdutosController::class, 'index'])->name('clientes.index');
     // CADASTRO UPTADE
     Route::get('/cadastrarClientes', [ProdutosController::class, 'cadastrarClientes'])->name('cadastrar.Clientes');
     Route::post('/cadastrarClientes', [ProdutosController::class, 'cadastrarClientes'])->name('cadastrar.Clientes');
@@ -29,4 +29,11 @@ Route::prefix('Clientes')->group(function () {
     Route::put('/atualizarClientes/{id}', [ProdutosController::class, 'atualizarClientes'])->name('atualizar.Clientes');
 
     Route::delete('/delete', [ProdutosController::class, 'delete'])->name('clientes.delete');
+});
+
+Route::prefix('Vendas')->group(function () {
+    Route::get('/', [ProdutosController::class, 'index'])->name('vendas.index');
+
+    Route::get('/cadastrarVendas', [ProdutosController::class, 'cadastrarVendas'])->name('cadastrar.Vendas');
+    Route::post('/cadastrarVendas', [ProdutosController::class, 'cadastrarVendas'])->name('cadastrar.Vendas');
 });
