@@ -1,26 +1,29 @@
 <?php
 
-use Illuminate\Database\Migrations\Migration;
-use Illuminate\Database\Schema\Blueprint;
-use Illuminate\Support\Facades\Schema;
+namespace Database\Seeders;
 
-use function Laravel\Prompts\table;
+use App\Models\Venda;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
 
-return new class extends Migration
+class VendasSeeder extends Seeder
 {
-    public function up(): void
+    public function run(): void
     {
-        Schema::create('vendas', function (Blueprint $table) {
-            $table->id();
-            $table->integer('numero_da_venda');
-            $table->foreignId('produto_id')->constrained('produtos');
-            $table->foreignId('cliente_id')->constrained('clientes');
-            $table->timestamps();
-        });
-    }
+        Venda::create(
+            [
+                'numero_da_venda' => 1,
+                'produto_id' => 2,
+                'cliente_id' => 3,
+            ]
+        );
 
-    public function down(): void
-    {
-        Schema::dropIfExists('vendas');
+        Venda::create(
+            [
+                'numero_da_venda' => 2,
+                'produto_id' => 2,
+                'cliente_id' => 3,
+            ]
+        );
     }
-};
+}
