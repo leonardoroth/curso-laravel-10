@@ -6,22 +6,22 @@
   </div>
 
   <div>
-      <form action="{{ route('cliente.index') }}" method="get">
+      <form action="{{ route('vendas.index') }}" method="get">
           <input type="text" name="pesquisar" placeholder="Digite o nome">
           <button> Pesquisar </button>
-          <a type="button" href="{{ route('cadastrar.Clientes') }}" class="btn btn-success float-end">
-              Incluir Cliente
+          <a type="button" href="{{ route('vendas.Clientes') }}" class="btn btn-success float-end">
+              Incluir Produto
           </a>
       </form>
 
   <div class="table-responsive mt-4">
-    @if ($findCliente->isEmpty())
+    @if ($findVenda->isEmpty())
       <p> Não existem dados </p>   
     @else
       <table class="table table-striped table-sm">
         <thead>
           <tr>
-            <th>Nome</th>
+            <th>Numeração</th>
             <th>E-mail</th>
             <th>Endereço</th>
             <th>Logradouro</th>
